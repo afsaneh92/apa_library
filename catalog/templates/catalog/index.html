@@ -1,0 +1,16 @@
+{% block content %}
+<h1>Local Library Home</h1>
+
+  <p>Welcome to <em>LocalLibrary</em>, a very basic Django website </p>
+
+<h2>Dynamic content</h2>
+
+  <p>The library has the following records:</p>
+  <ul>
+    <li><strong>نام کتاب:</strong> {{ books_title }}</li>
+    <li><strong>تاریخ نشر:</strong> {{ pub_date }}</li>
+    <li><strong>تعداد صفحات:</strong> {{ number_of_pages }}</li>
+    <li><strong>چاپ اول:</strong> {{ is_first_edition }}</li>
+  </ul>
+
+{% endblock %}
