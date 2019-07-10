@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views import generic
 from . import models
 
 def index(request):
@@ -20,3 +20,6 @@ def index(request):
                  'number_of_pages' : number_of_pages,
                  'is_first_edition':is_first_edition},
     )
+class BookListView(generic.ListView):
+    model = models.Book
+    template_name = 'catalog/book_list.html'
