@@ -16,3 +16,5 @@ class Book(models.Model):
         """
         return self.title
 
+def add_book():
+    pass
