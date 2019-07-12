@@ -21,15 +21,15 @@
           <div class="col-sm-2">
               {% block sidebar %}
               <ul class="sidenav">
-                  <hr>
-                  <hr>
-                  <hr>
-                  <li><a href="{% url 'catalog:index' %}">Home</a></li>
-                  <li><a href="{% url 'catalog:books_list' %}">All books</a></li>
-                  <li><a href="{% url 'catalog:add_book'%}">Add books</a></li>
+                  <br>
+                  <br>
+                  <br>
+                  <li><a href="{% url 'catalog:index' %}"><h4>Home</h4></a></li>
+                  <li><a href="{% url 'catalog:books_list' %}"><h4>All books</h4></a></li>
+                  <li><a href="{% url 'catalog:add_book'%}"><h4>Add books</h4></a></li>
         {#          <li><a href="{% url 'catalog:books_list'%}">Delete books</a></li>#}
         {#          <li><a href="{% url 'catalog:books_list'%}">Edit books</a></li>#}
-                  <li><a href="/admin/"> Admin Page </a></li>
+                  <li><a href="/admin/"> <h4>Admin Page</h4> </a></li>
 
               </ul>
              {% endblock %}

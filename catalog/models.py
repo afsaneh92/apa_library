@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.db import models
+from django.urls import reverse
 
 class Book(models.Model):
     """
@@ -15,6 +16,12 @@ class Book(models.Model):
         String for representing the Model object.
         """
         return self.title
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular book instance.
+        """
+        return reverse('catalog:book_detail', args=[str(self.id)])
 
 def add_book():
     pass

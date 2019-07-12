@@ -2,12 +2,12 @@
 
 {% block content %}
 <h1>Local Library Home</h1>
-  {% for book in book_list%}
-    <h1>{{ book.title }}</h1>
-    <p> Books name: {{ book.title }}</p>
-    <p> publition date: {{ book.pub_date }}</p>
-    <p> number_of_pages: {{ book.number_of_pages }} </p>
-    <p> is first edition: {{ book.is_first_edition }} </p>
+    <br><br>
+    <h3>{{ book.title }}</h3>
+    <p> <strong>Books name: </strong> {{ book.title }}</p>
+    <p> <strong>publition date: </strong> {{ book.pub_date }}</p>
+    <p> <strong>number_of_pages: </strong> {{ book.number_of_pages }} </p>
+    <p> <strong>is first edition: </strong> {{ book.is_first_edition }} </p>
     <hr>
 
        <form action="" method="post">
@@ -15,10 +15,10 @@
         <table>
         {{ form }}
         </table>
-        <input type="submit" value="Delete" onclick=view.delete_row() />
+        <input type="submit" value="Delete"  />
         <input type="submit" value="Edit" />
     </form>
 
 
-  {% endfor %}
+
 {% endblock %}

@@ -32,5 +32,9 @@ class AddBook(generic.ListView):
     model = models.Book
     template_name = 'catalog/add_book.html'
 
+class BookDetailView(generic.DetailView):
+    model = models.Book
+    template_name='catalog/book_detail.html'
+
 def delete_row(request):
     pass
