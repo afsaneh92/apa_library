@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
+from django.views.generic import CreateView, DeleteView, UpdateView
+
+from catalog.models import Book
 from . import models
 
 def index(request):
@@ -36,5 +40,18 @@ class BookDetailView(generic.DetailView):
     model = models.Book
     template_name='catalog/book_detail.html'
 
-def delete_row(request):
-    pass
+class BookCreate(generic.CreateView):
+    model = models.Book
+    fields = "__all__"
+    # initial =
+    template_name = 'catalog/add_book.html'
+
+class BookEdit(generic.UpdateView):
+    model = models.Book
+    fields = "__all__"
+    template_name = 'catalog/add_book.html'
+
+class BookDelete(generic.DeleteView):
+    model = models.Book
+    template_name = 'catalog/delete_book.html'
+    success_url = reverse_lazy('catalog:books_list')

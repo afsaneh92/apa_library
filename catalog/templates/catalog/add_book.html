@@ -3,15 +3,19 @@
 
     <h1>Enter book infomation</h1><br><br><br>
     <form action="" method="post">
-        Title:<br><input name="Title" type="text">
-        <br><br>
-        Pub_date:<br><input name="Pub_date" type="text">
-        <br><br>
-        number of pages:<br><input name="number_of_pages" type="text">
-        <br><br>
-        <input type="checkbox" name="is_first_edition" value="is_first"> is_first_edition<br>
-        <br><br><br>
-        <input type="submit" value="Save" />
+        {% csrf_token %}
+{#        Title:<br><input name="Title" type="text">#}
+{#        <br><br>#}
+{#        Pub_date:<br><input name="Pub_date" type="text">#}
+{#        <br><br>#}
+{#        number of pages:<br><input name="number_of_pages" type="text">#}
+{#        <br><br>#}
+{#        <input type="checkbox" name="is_first_edition" value="is_first"> is_first_edition<br>#}
+{#        <br><br><br>#}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" />
     </form>
 
 {% endblock %}
