@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import CreateView, DeleteView, UpdateView
+from jalali_date import datetime2jalali, date2jalali
 
 from catalog.models import Book
 from . import models
@@ -12,9 +13,6 @@ def index(request):
     """
     # Generate some of the main objects
     number=models.Book.objects.all().count()
-    # pub_date=models.Book.objects.all().count()
-    # number_of_pages=models.Book.objects.all().count()
-    # is_first_edition=models.Book.objects.all().count()
 
     # Render the HTML template index.html
     return render(
@@ -55,3 +53,7 @@ class BookDelete(generic.DeleteView):
     model = models.Book
     template_name = 'catalog/delete_book.html'
     success_url = reverse_lazy('catalog:books_list')
+
+
+def my_view(request):
+	jalali_join = datetime2jalali(request.user.date_joined).strftime('%y/%m/%d _ %H:%M:%S')

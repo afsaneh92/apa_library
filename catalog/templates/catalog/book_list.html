@@ -7,8 +7,6 @@
 
       {% for book in book_list %}
       <li>
-{#        {{ book.title }}#}
-
         <a href="{{ book.get_absolute_url }}"><h4>{{ book.title }}</h4></a>
       </li>
       {% endfor %}
@@ -18,23 +16,3 @@
       <p>There are no books in the library.</p>
     {% endif %}
 {% endblock %}
-
-{#{% block content %}#}
-{#    <h1>Book List</h1><hr>#}
-{#      {% for book in book_list%}#}
-{#        <h3>{{ book.title }}</h3>#}
-{#        <p> Books name: {{ book.title }}</p>#}
-{#        <p> publition date: {{ book.pub_date }}</p>#}
-{#        <p> number_of_pages: {{ book.number_of_pages }} </p>#}
-{#        <p> is first edition: {{ book.is_first_edition }} </p>#}
-{#        <form action="" method="post">#}
-{#            {% csrf_token %}#}
-    {#        <table>#}
-    {#        {{ form }}#}
-    {#        </table>#}
-{#            <input type="submit" value="Delete" />#}
-{#            <input type="submit" value="Edit" />#}
-{#        </form>#}
-{#          <hr>#}
-{#      {% endfor %}#}
-{#{% endblock %}#}

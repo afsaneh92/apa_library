@@ -5,9 +5,11 @@
     <br><br>
     <h3><a href="{% url 'catalog:book_detail' book.id%}">{{ book.title }}</a></h3>
     <p> <strong>Books name: </strong> {{ book.title }}</p>
-    <p> <strong>publition date: </strong> {{ book.pub_date }}</p>
-    <p> <strong>number_of_pages: </strong> {{ book.number_of_pages }} </p>
+    <p> <strong>publication date: </strong> {{ book.pub_date }}</p>
+    <p> <strong>number of pages: </strong> {{ book.number_of_pages }} </p>
     <p> <strong>is first edition: </strong> {{ book.is_first_edition }} </p>
+    <p> <strong>category: </strong> {{ book.get_category_name }} </p>
+
     <hr>
 
        <form action="" method="post">
@@ -18,8 +20,6 @@
         </table>
            <a class="btn btn-primary" href="/catalog/book/{{ book.id }}/edit/">Edit</a>
            <a class="btn btn-primary" href="/catalog/book/{{ book.id }}/delete/">Delete</a>
-{#        <input type="submit" value="Delete" onclick="" />#}
-{#        <input type="submit" value="Edit" />#}
     </form>
 
 

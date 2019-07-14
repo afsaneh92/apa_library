@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.db import models
 from django.urls import reverse
+from djchoices import ChoiceItem, DjangoChoices
 
 class Book(models.Model):
     """
@@ -10,6 +11,23 @@ class Book(models.Model):
     pub_date = models.DateTimeField(default=datetime.today())
     number_of_pages = models.IntegerField(default=0)
     is_first_edition = models.BooleanField(default=True)
+
+    Engineering = 'ER'
+    Medical = 'ME'
+    Art = 'AR'
+    Psychology = 'PS'
+    Field_Category_CHOICES = [
+        (Engineering, 'Engineering'),
+        (Medical, 'Medical'),
+        (Art, 'Art'),
+        (Psychology, 'Psychology'),
+    ]
+    category = models.CharField(
+        max_length=2,
+        choices=Field_Category_CHOICES,
+        default=Engineering,
+    )
+
 
     def __str__(self):
         """
@@ -23,5 +41,11 @@ class Book(models.Model):
         """
         return reverse('catalog:book_detail', args=[str(self.id)])
 
-def add_book():
-    pass
+
+    def get_category_name(self):
+        """
+        Returns the url to access a particular book instance.
+        """
+        for choice in self.Field_Category_CHOICES:
+            if choice[0] == self.category:
+                return choice[1]
