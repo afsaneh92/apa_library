@@ -45,3 +45,4 @@ class BookDelete(generic.DeleteView):
     model = models.Book
     template_name = 'catalog/delete_book.html'
     success_url = reverse_lazy('catalog:books_list')
+
