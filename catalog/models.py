@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 from django.db import models
 from django.urls import reverse
 from djchoices import ChoiceItem, DjangoChoices
@@ -8,7 +8,7 @@ class Book(models.Model):
     Model representing a book
     """
     title = models.CharField(max_length=200)
-    pub_date = models.DateField(default=datetime.today())
+    pub_date = models.DateField(default=date.today())
     number_of_pages = models.IntegerField(default=0)
     is_first_edition = models.BooleanField(default=True)
 
