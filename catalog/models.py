@@ -8,7 +8,7 @@ class Book(models.Model):
     Model representing a book
     """
     title = models.CharField(max_length=200)
-    pub_date = models.DateTimeField(default=datetime.today())
+    pub_date = models.DateField(default=datetime.today())
     number_of_pages = models.IntegerField(default=0)
     is_first_edition = models.BooleanField(default=True)
 
