@@ -65,7 +65,7 @@ itsdangerous==0.24
 jdatetime==3.3.0
 jdcal==1.4
 jedi==0.12.1
-Jinja2==2.10
+Jinja2==2.11.3
 joblib==0.13.1
 jsonschema==2.6.0
 jupyter-client==5.2.3
